@@ -6,6 +6,7 @@ import { Nav } from "./Nav/Nav";
 import { Homepage } from "./Homepage/home";
 import { Features } from "./Feature/features";
 import { About } from "./About/about";
+import { Contact } from "./Contact/contact";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         
       </div><Features></Features>
       <About/>
+      <Contact></Contact>
     </>
   );
 }

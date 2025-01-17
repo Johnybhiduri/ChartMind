@@ -36,7 +36,7 @@ export const Nav = () => {
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
             <a href="" className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-6 rounded-md">
-              Demo
+              Start for free
             </a>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
@@ -56,7 +56,7 @@ export const Nav = () => {
           </ul>
           <div className="flex space-x-6 items-center justify-center">
           <a href="" className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-6 rounded-md">
-              Demo
+              Start for free
             </a>
           </div>
           </div>
