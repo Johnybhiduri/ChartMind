@@ -77,7 +77,7 @@ export const Contact = () => {
 
             </div>
             {/* Contact information */}
-            <div className="p-2 w-full lg:w-1/2">
+            <div className="p-10 w-full lg:w-1/2">
             <img src={img} alt="contact" className="inset-0 w-full h-full object-cover" />
             </div>
             </div>
