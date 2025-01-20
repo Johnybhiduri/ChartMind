@@ -3,7 +3,7 @@ import vid1 from "../assets/vid1.mp4"
 import vid2 from "../assets/vid2.mp4"
 export const Homepage = () => {
   return (
-    <div className="flex flex-col items-center mt-6 lg:mt-20">
+    <div className="flex flex-col items-center mt-6 lg:mt-10">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
       Transform Your Data Into Stunning Charts
       <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">{" "} with ChartMind! </span>

@@ -3,7 +3,7 @@ import img from "../assets/contact.jpg"
 export const Contact = () => {
 
     return (
-        <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+        <div className="relative py-20 border-b border-neutral-800">
             <div className="text-center">
                 <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
                     Contact
@@ -23,10 +23,8 @@ export const Contact = () => {
                 <form 
                         className="mt-8 space-y-4 w-full"
                     >
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-neutral-500">
-                                Name
-                            </label>
+                        <div className="py-2">
+                            
                             <input 
                                 type="text" 
                                 id="name" 
@@ -37,10 +35,8 @@ export const Contact = () => {
                             />
                         </div>
 
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-neutral-500">
-                                Email
-                            </label>
+                        <div className="py-2">
+                            
                             <input 
                                 type="email" 
                                 id="email" 
@@ -51,10 +47,8 @@ export const Contact = () => {
                             />
                         </div>
 
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-neutral-500">
-                                Message
-                            </label>
+                        <div className="py-2">
+                            
                             <textarea 
                                 id="message" 
                                 name="message" 
@@ -78,7 +72,7 @@ export const Contact = () => {
             </div>
             {/* Contact information */}
             <div className="p-10 w-full lg:w-1/2">
-            <img src={img} alt="contact" className="inset-0 w-full h-full object-cover" />
+            <img src={img} alt="contact" className="rounded-lg border border-orange-700 shadow-orange-400 inset-0 w-full h-full object-cover" />
             </div>
             </div>
         </div>

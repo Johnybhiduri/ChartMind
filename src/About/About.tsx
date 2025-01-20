@@ -52,7 +52,7 @@ export const About = () => {
 
             <div className="flex flex-wrap justify-center mt-10">
                 <div className="p-2 w-full lg:w-1/2">
-                    <img src={img} alt="chartmind" className="inset-0 w-full h-full object-cover" />
+                    <img src={img} alt="chartmind" className="rounded-lg border border-orange-700 shadow-orange-400 inset-0 w-full h-full object-cover" />
                 </div>
                 <div className="pt-10 w-full lg:w-1/2">
                     {checkListItems.map((item: any, index: number) => (
