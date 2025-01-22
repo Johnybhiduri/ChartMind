@@ -1,9 +1,19 @@
 import "./nav.css";
-
 import {Menu,X, ChartLine} from "lucide-react"
-// import logo from "../assets/chartmind.png"
+import logo from "../assets/chartmind-logo.png"
 import { useState } from "react";
-export const Nav = () => {
+
+interface NavProps {
+  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
+  sections: {
+    homeRef: React.RefObject<HTMLDivElement>;
+    featuresRef: React.RefObject<HTMLDivElement>;
+    aboutRef: React.RefObject<HTMLDivElement>;
+    contactRef: React.RefObject<HTMLDivElement>;
+  };
+}
+
+export const Nav:React.FC<NavProps> = ({ scrollToSection, sections }) => {
 
   const [mobileDrawerOpen,setMobileDrawerOpen] = useState(false);
 
@@ -12,25 +22,26 @@ export const Nav = () => {
   }
 
   const navItems = [
-    {label: "Home", href: '#'},
-    {label: "Features", href: '#'},
-    {label: "About", href: '#'},
-    {label: "Contact", href: '#'}
+    {label: "Home", action: () => scrollToSection(sections.homeRef)},
+    {label: "Features", action: () => scrollToSection(sections.featuresRef)},
+    {label: "About", action: () => scrollToSection(sections.aboutRef)},
+    {label: "Contact", action: () => scrollToSection(sections.contactRef)}
   ]
+  
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-bottom-neutral-700/80">
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <div className="h-10 w-10  mt-3" >
-            <ChartLine size={25}/>
+            <div className="h-10 w-10 mt-3 mr-1" >
+            <img src={logo} alt="ChartMind Logo" />
             </div>
             <span className="text-xl tracking-tight">ChartMind</span>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item: any, index: number) => (
               <li key={index}>
-                <a href={item?.href}>{item?.label}</a>
+                <button onClick={item.action}>{item?.label}</button>
               </li>
             ))}
           </ul>
@@ -50,7 +61,10 @@ export const Nav = () => {
             <ul>
             {navItems.map((item: any, index: number) => (
               <li key={index} className="py-4">
-                <a href={item?.href}>{item?.label}</a>
+                <button onClick={() => {
+                      item.action();
+                      toggleNavBar(); // Close mobile menu after clicking
+                    }}>{item?.label}</button>
               </li>
             ))}
           </ul>
