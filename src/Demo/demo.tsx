@@ -1,5 +1,6 @@
+import React from "react"
 export const Demo = () => {
-    return (<>
-    <div className="demo"></div>
-    </>)
+    return (
+    <div className="">DEMO</div>
+    )
 }

@@ -8,6 +8,7 @@ import { About } from "./About/About";
 import { Contact } from "./Contact/contact";
 import { Footer } from "./Nav/Footer";
 import { Terms } from "./Terms/Terms";
+import { Demo } from "./Demo/demo";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ function App() {
           />
           {/* Route for Terms */}
           <Route path="/terms" element={<Terms />} />
+          <Route path="/demo" element={<Demo/>}/>
         </Routes>
       </div>
       <Footer

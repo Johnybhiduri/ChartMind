@@ -1,5 +1,7 @@
 import { Linkedin, Github , Mail  } from 'lucide-react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 interface FooterProps {
     scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
     sections: {
@@ -12,6 +14,17 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ scrollToSection, sections }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (sectionRef: React.RefObject<HTMLDivElement>) => {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => scrollToSection(sectionRef), 100); // Wait for navigation to complete
+      } else {
+        scrollToSection(sectionRef);
+      }
+    };
+
   return (
     <footer className="mt-2 border-neutral-700 pt-10 text-center">
       {/* Top Section: Social Icons */}
@@ -31,13 +44,13 @@ export const Footer: React.FC<FooterProps> = ({ scrollToSection, sections }) => 
       <div className="space-y-2">
         <ul className="flex justify-center space-x-6 text-sm text-gray-400">
           <li>
-            <button onClick={() => scrollToSection(sections.homeRef)} className="hover:text-white">Home</button>
+            <button onClick={() => handleNavigation(sections.homeRef)} className="hover:text-white">Home</button>
           </li>
           <li>
-            <button onClick={() => scrollToSection(sections.featuresRef)} className="hover:text-white">Features</button>
+            <button onClick={() => handleNavigation(sections.featuresRef)} className="hover:text-white">Features</button>
           </li>
           <li>
-            <button onClick={() => scrollToSection(sections.aboutRef)} className="hover:text-white">About</button>
+            <button onClick={() => handleNavigation(sections.aboutRef)} className="hover:text-white">About</button>
           </li>
           <li>
             <button   onClick={() => navigate("/terms")} className="hover:text-white">Terms</button>

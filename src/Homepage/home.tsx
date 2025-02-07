@@ -1,7 +1,10 @@
 import "./home.css"
+import React from "react";
 import vid1 from "../assets/vid1.mp4"
 import vid2 from "../assets/vid2.mp4"
+import { useNavigate } from "react-router-dom";
 export const Homepage = () => {
+  const navigate =  useNavigate();
   return (
     <div className="flex flex-col items-center mt-6 lg:mt-10">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
@@ -12,7 +15,7 @@ export const Homepage = () => {
       Bring your data to life with our powerful chart generation tool. Upload your CSV files and watch as we transform your raw data into stunning, interactive charts. Simplify insights and make data visualization effortless!
       </p>
       <div className="flex justify-center my-10">
-        <a href="" className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md">
+        <a onClick={() => navigate("/demo")} className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md">
           Start for free
         </a>
         <a href="" className="py-3 px-4 mx-3 rounded-md border">
