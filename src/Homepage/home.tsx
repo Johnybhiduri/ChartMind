@@ -1,6 +1,8 @@
 import "./home.css"
 import React from "react";
+// @ts-ignore
 import vid1 from "../assets/vid1.mp4"
+// @ts-ignore
 import vid2 from "../assets/vid2.mp4"
 import { useNavigate } from "react-router-dom";
 export const Homepage = () => {

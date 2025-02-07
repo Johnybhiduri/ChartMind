@@ -1,6 +1,7 @@
 import "./nav.css";
 import React from "react";
 import { Menu, X } from "lucide-react";
+// @ts-ignore
 import logo from "../assets/chartmind-logo.png";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
