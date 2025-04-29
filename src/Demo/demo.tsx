@@ -1,9 +1,17 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 export const Demo = () => {
+
+
+    const [files, setFiles] = useState<File[]>([]);
+
+
     const onDrop = useCallback((acceptedFiles) => {
         console.log(acceptedFiles);
+        setFiles((prevFiles) => [...prevFiles, ...acceptedFiles]);
       }, []);
+
+    
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
@@ -19,10 +27,14 @@ export const Demo = () => {
 
       {/* Main Content */}
       <div className="w-3/4 p-6 flex flex-col items-center justify-center space-y-6">
+      {files.map((file,i) => (
+                <button className="py-3 px-6 mx-3 rounded-md border" key={i}>{file.name}</button>
+            ))}
         <div
           {...getRootProps()}
           className="w-full max-w-lg p-10 border-2 border-dashed border-gray-400 rounded-lg text-center cursor-pointer hover:border-gray-600 transition"
         >
+            
           <input {...getInputProps()} />
           {isDragActive ? (
             <p className="text-gray-600">Drop the files here...</p>

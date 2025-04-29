@@ -17,9 +17,9 @@ export const Homepage = () => {
       Bring your data to life with our powerful chart generation tool. Upload your CSV files and watch as we transform your raw data into stunning, interactive charts. Simplify insights and make data visualization effortless!
       </p>
       <div className="flex justify-center my-10">
-        <a onClick={() => navigate("/demo")} className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md">
+        <button onClick={() => navigate("/demo")} className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md">
           Start for free
-        </a>
+        </button>
         <a href="" className="py-3 px-4 mx-3 rounded-md border">
           Buy me a Coffee
         </a>
